@@ -23,8 +23,20 @@ def make_collage(images, rows, cols):
                 collage.paste(resized_images[img_index], (j * max_width, i * max_height))
 
     return collage
-
+st.set_page_config(page_title='Photo Collage Maker')
 st.title("Photo Collage Maker")
+st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background-image: url("https://4kwallpapers.com/images/wallpapers/macos-monterey-wwdc-21-stock-dark-mode-5k-4480x2520-5585.jpg");
+             background-attachment: fixed;
+             background-size: cover
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
 st.write("Upload your images and select the number of rows and columns for your collage")
 
 uploaded_files = st.file_uploader("Choose images", type=["jpg", "jpeg", "png"], accept_multiple_files=True)
